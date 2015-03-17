@@ -1,0 +1,15 @@
+{
+    "rules": {
+        "quotes": [1, "single"]
+    },
+    "ecmaFeatures": {
+        "arrowFunctions": true,
+        "blockBindings": true,
+        "templateStrings": true,
+        "modules": true,
+        "classes": true
+    },
+    "env": {
+        "node": true
+    }
+}
