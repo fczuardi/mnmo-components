@@ -1,0 +1,70 @@
+{
+  "name": "mnmo-components",
+  "version": "0.1.0",
+  "description": "A collection of UI components",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "echo type npm run --list for a list of tasks available",
+    "start": "npm run www:serve",
+    "outdated": "npm outdated --depth=0",
+    "lint": "eslint ./lib",
+    "clean": "rm -rf ./dist",
+    "npm:clean": "rm -rf ./dist/npm",
+    "npm:mkdir": "mkdir -p ./dist/npm/lib/styles",
+    "npm:transpile": "babel -d ./dist/npm/lib -m common ./lib",
+    "postnpm:transpile": "npm run npm:edit:jsx-references",
+    "npm:edit:jsx-references": "find ./dist/npm/lib -type f -name '*.js' -print0 | xargs -0 sed -i.bak 's@\\.jsx@@g'",
+    "postnpm:edit:jsx-references": "find ./dist/npm/lib -type f -name '*.bak' -print0 | xargs -0 rm -fv",
+    "npm:cp:package.json": "cp -f ./package.json ./dist/npm/.",
+    "npm:cp:img": "cp -R ./assets/img ./dist/npm/lib/styles",
+    "www:clean": "rm -rf ./dist/www",
+    "www:mkdir": "mkdir -p ./dist/www/js",
+    "www:js:vendors": "browserify -r react -o ./dist/www/js/vendors.js",
+    "www:js:app": "browserify -t babelify -x react -e ./app.js -o ./dist/www/js/main.js",
+    "www:html:index": "./bin/index_html.js > ./dist/www/index.html",
+    "www:assets:img": "cp -Rf ./assets/img ./dist/www/.",
+    "www:serve": "babel-node server.js",
+    "npm:cp": "npm run npm:cp:package.json & npm run npm:cp:img",
+    "prenpm": "npm run npm:clean && npm run npm:mkdir",
+    "npm": "npm run npm:transpile & npm run npm:cp",
+    "www:js": "npm run www:js:vendors & npm run www:js:app",
+    "www:html": "npm run www:html:index",
+    "www:assets": "npm run www:assets:img",
+    "prewww": "npm run www:clean && npm run www:mkdir",
+    "www": "npm run www:js & npm run www:html & npm run www:assets"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fczuardi/mnmo-components.git"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "widgets",
+    "mobile",
+    "ui",
+    "mnmo"
+  ],
+  "author": "Fabricio C Zuardi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fczuardi/mnmo-components/issues"
+  },
+  "homepage": "https://github.com/fczuardi/mnmo-components",
+  "private": true,
+  "peerDependencies": {
+    "object-assign": "^2.0.0",
+    "react": "^0.13.0"
+  },
+  "devDependencies": {
+    "babel": "^4.7.9",
+    "babelify": "^5.0.4",
+    "browserify": "^9.0.3",
+    "eslint": "git://github.com/ZIJ/eslint",
+    "js-beautify": "^1.5.5",
+    "koa": "^0.18.1",
+    "koa-static": "^1.4.9",
+    "object-assign": "^2.0.0",
+    "react": "^0.13.1"
+  }
+}
