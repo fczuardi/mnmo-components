@@ -8,7 +8,7 @@ import {
 } from 'react';
 import {html} from 'js-beautify';
 
-import Page from '../lib/page';
+import {Page} from '../lib';
 
 var options = {
     title: 'mnmo components',
