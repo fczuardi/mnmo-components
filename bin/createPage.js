@@ -13,6 +13,9 @@ import Page from '../lib/page';
 var options = {
     title: 'mnmo components',
     scripts: [
+        './js/es5-shim.min.js',
+        './js/es5-sham.min.js',
+        './js/console-polyfill.js',
         './js/vendors.js',
         './js/app.js'
     ]
