@@ -62,7 +62,7 @@
     "react": "^0.13.0"
   },
   "devDependencies": {
-    "babel": "^4.7.9",
+    "babel": "^4.7.16",
     "babelify": "^5.0.4",
     "browserify": "^9.0.3",
     "console-polyfill": "^0.2.0",
