@@ -5,29 +5,32 @@ import {
     DOM
 } from 'react';
 
-import {Checkbox} from './lib';
+import {FieldSet, Checkbox} from './lib';
 import {Checkbox as MnmoCheckbox} from './lib/themes/mnmo';
 import mnmoCheckboxStyles from './lib/themes/mnmo/styles/checkbox';
 
 render(
     DOM.div(null,
-        createElement(Checkbox, {
-                id: 'mycheckbox01',
-                checked: true,
-                styles: mnmoCheckboxStyles
-            },
-            'checked checkbox'
-        ),
-        createElement(Checkbox, {
-                id: 'mycheckbox02',
-                checked: false
-            },
-            'unchecked checkbox'
-        ),
-        createElement(MnmoCheckbox, {
-                id: 'mycheckbox03',
-            },
-            'checked property not defined'
+        createElement(FieldSet, {styles: {fieldset: { borderColor: '#0bb' }}}),
+        createElement(FieldSet, { legend: 'Foobar' },
+            createElement(Checkbox, {
+                    id: 'mycheckbox01',
+                    checked: true,
+                    styles: mnmoCheckboxStyles
+                },
+                'checked checkbox'
+            ),
+            createElement(Checkbox, {
+                    id: 'mycheckbox02',
+                    checked: false
+                },
+                'unchecked checkbox'
+            ),
+            createElement(MnmoCheckbox, {
+                    id: 'mycheckbox03',
+                },
+                'checked property not defined'
+            )
         )
     ),
     document.getElementById('main')
