@@ -5,9 +5,8 @@ import {
     DOM
 } from 'react';
 
-import Checkbox from './lib/checkbox';
-import MnmoCheckbox from './lib/themes/mnmo/checkbox';
-
+import {Checkbox} from './lib';
+import {Checkbox as MnmoCheckbox} from './lib/themes/mnmo';
 import mnmoCheckboxStyles from './lib/themes/mnmo/styles/checkbox';
 
 render(
