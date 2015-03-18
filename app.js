@@ -5,13 +5,19 @@ import {
     DOM
 } from 'react';
 
-import {FieldSet, Checkbox} from './lib';
+import {
+    FieldSet,
+    TextInput,
+    Checkbox
+} from './lib';
 import {Checkbox as MnmoCheckbox} from './lib/themes/mnmo';
 import mnmoCheckboxStyles from './lib/themes/mnmo/styles/checkbox';
 
 render(
     DOM.div(null,
-        createElement(FieldSet, {styles: {fieldset: { borderColor: '#0bb' }}}),
+        createElement(FieldSet, {styles: {fieldset: { borderColor: '#0bb' }}},
+            createElement(TextInput, {placeholder: 'my placeholder'})
+        ),
         createElement(FieldSet, { legend: 'Foobar' },
             createElement(Checkbox, {
                     id: 'mycheckbox01',
