@@ -1,11 +1,11 @@
 // Renders a div containing 3 cheboxes into the DOM element with id 'main'
 import {
     render,
-    createElement,
-    DOM
+    createElement
 } from 'react';
 
 import {
+    Stage,
     FieldSet,
     TextInput,
     Checkbox
@@ -14,7 +14,7 @@ import {Checkbox as MnmoCheckbox} from './lib/themes/mnmo';
 import mnmoCheckboxStyles from './lib/themes/mnmo/styles/checkbox';
 
 render(
-    DOM.div(null,
+    createElement(Stage, null,
         createElement(FieldSet, {styles: {fieldset: { borderColor: '#0bb' }}},
             createElement(TextInput, {placeholder: 'my placeholder'})
         ),
