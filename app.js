@@ -1,12 +1,14 @@
 // Renders a div containing 3 cheboxes into the DOM element with id 'main'
 import {
     render,
-    createElement
+    createElement as create,
+    DOM
 } from 'react';
 
 import {
     FieldSet,
-    Checkbox
+    Checkbox,
+    Select
 } from './lib';
 import {
     Stage, 
@@ -22,28 +24,33 @@ console.log(TextInput);
 
 
 render(
-    createElement(Stage, null,
-        createElement(CenteredBox, null,
-            createElement(FieldSet, {styles: {fieldset: { borderColor: '#0bb' }}},
-                createElement(TextInput, {placeholder: 'my placeholder'})
+    create(Stage, null,
+        create(CenteredBox, null,
+            create(FieldSet, {styles: {fieldset: { borderColor: '#0bb' }}},
+                create(TextInput, {placeholder: 'my placeholder'})
             ),
-            createElement(MnmoFieldSet, { legend: 'Bem vindo' },
-                createElement(TextInput, {placeholder: 'usuário'}),
-                createElement(TextInput, {placeholder: 'senha', type: 'password'}),
-                createElement(Checkbox, {
+            create(MnmoFieldSet, { legend: 'Bem vindo' },
+                create(TextInput, {placeholder: 'usuário'}),
+                create(TextInput, {placeholder: 'senha', type: 'password'}),
+                create(Select, {name: 'foobarSelector'},
+                    DOM.option({value: 1}, 'FOOBAR'),
+                    DOM.option({value: 1}, 'HELLO'),
+                    DOM.option({value: 1}, 'WORLD')
+                ),
+                create(Checkbox, {
                         id: 'mycheckbox01',
                         checked: true,
                         styles: mnmoCheckboxStyles
                     },
                     'checked checkbox'
                 ),
-                createElement(Checkbox, {
+                create(Checkbox, {
                         id: 'mycheckbox02',
                         checked: false
                     },
                     'unchecked checkbox'
                 ),
-                createElement(MnmoCheckbox, {
+                create(MnmoCheckbox, {
                         id: 'mycheckbox03',
                     },
                     'checked property not defined'
