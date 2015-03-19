@@ -3,3 +3,4 @@ dist
 .zedstate
 npm-debug.log
 assets/custom
+assets/fonts
