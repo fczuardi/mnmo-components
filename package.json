@@ -27,6 +27,7 @@
     "www:js:app": "browserify -t babelify -x react -e ./app.js -o ./dist/www/js/app.js",
     "www:html:index": "babel-node ./bin/createPage.js > ./dist/www/index.html",
     "www:css:normalize": "cp -f ./node_modules/normalize.css/normalize.css ./dist/www/css/.",
+    "www:img:custom": "cp ./assets/custom/dev/bg01.jpg ./dist/www/img/.",
     "www:assets:img": "cp -Rf ./lib/themes/mnmo/img ./dist/www/",
     "www:serve": "babel-node server.js",
     "npm:cp": "npm run npm:cp:package.json & npm run npm:cp:img && npm run npm:cp:es6-lib",
@@ -36,7 +37,7 @@
     "www:js": "npm run www:js:vendors & npm run www:js:app && npm run www:js:polyfill",
     "www:html": "npm run www:html:index",
     "www:css": "npm run www:css:normalize",
-    "www:assets": "npm run www:assets:img",
+    "www:assets": "npm run www:assets:img && npm run www:img:custom",
     "prewww": "npm run www:clean && npm run www:mkdir",
     "www": "npm run www:js & npm run www:html & npm run www:assets && npm run www:css"
   },

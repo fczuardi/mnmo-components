@@ -2,3 +2,4 @@ node_modules
 dist
 .zedstate
 npm-debug.log
+assets/custom

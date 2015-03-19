@@ -5,11 +5,11 @@ import {
 } from 'react';
 
 import {
-    Stage,
     FieldSet,
     TextInput,
     Checkbox
 } from './lib';
+import {Stage} from './lib/themes/mnmo';
 import {Checkbox as MnmoCheckbox} from './lib/themes/mnmo';
 import mnmoCheckboxStyles from './lib/themes/mnmo/styles/checkbox';
 
