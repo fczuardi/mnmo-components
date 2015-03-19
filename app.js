@@ -16,6 +16,7 @@ import {
     TextInput} from './lib/themes/mnmo';
 import {
     Checkbox as MnmoCheckbox,
+    Select as MnmoSelect,
     FieldSet as MnmoFieldSet 
 } from './lib/themes/mnmo';
 import mnmoCheckboxStyles from './lib/themes/mnmo/styles/checkbox';
@@ -27,12 +28,17 @@ render(
     create(Stage, null,
         create(CenteredBox, null,
             create(FieldSet, {styles: {fieldset: { borderColor: '#0bb' }}},
+                create(Select, {name: 'foobarSelector'},
+                    DOM.option({value: 1}, 'FOOBAR'),
+                    DOM.option({value: 1}, 'HELLO'),
+                    DOM.option({value: 1}, 'WORLD')
+                ),
                 create(TextInput, {placeholder: 'my placeholder'})
             ),
             create(MnmoFieldSet, { legend: 'Bem vindo' },
                 create(TextInput, {placeholder: 'usuário'}),
                 create(TextInput, {placeholder: 'senha', type: 'password'}),
-                create(Select, {name: 'foobarSelector'},
+                create(MnmoSelect, {name: 'foobarSelector'},
                     DOM.option({value: 1}, 'FOOBAR'),
                     DOM.option({value: 1}, 'HELLO'),
                     DOM.option({value: 1}, 'WORLD')
