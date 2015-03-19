@@ -10,7 +10,10 @@ import {
     Checkbox
 } from './lib';
 import {Stage, CenteredBox} from './lib/themes/mnmo';
-import {Checkbox as MnmoCheckbox} from './lib/themes/mnmo';
+import {
+    Checkbox as MnmoCheckbox,
+    FieldSet as MnmoFieldSet 
+} from './lib/themes/mnmo';
 import mnmoCheckboxStyles from './lib/themes/mnmo/styles/checkbox';
 
 render(
@@ -19,7 +22,8 @@ render(
             createElement(FieldSet, {styles: {fieldset: { borderColor: '#0bb' }}},
                 createElement(TextInput, {placeholder: 'my placeholder'})
             ),
-            createElement(FieldSet, { legend: 'Foobar' },
+            createElement(MnmoFieldSet, { legend: 'Bem vindo' },
+                createElement(TextInput, {placeholder: 'usuário'}),
                 createElement(Checkbox, {
                         id: 'mycheckbox01',
                         checked: true,
