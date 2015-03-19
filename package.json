@@ -19,13 +19,14 @@
     "npm:cp:es6-lib": "cp -R ./lib ./dist/npm/es6/.",
     "npm:cp:img": "cp -R ./lib/themes/mnmo/img ./dist/npm/lib/themes/mnmo/",
     "www:clean": "rm -rf ./dist/www",
-    "www:mkdir": "mkdir -p ./dist/www/js",
+    "www:mkdir": "mkdir -p ./dist/www/js && mkdir -p ./dist/www/css",
     "www:js:polyfill:es5-shim": "cp node_modules/es5-shim/es5-shim.min.js ./dist/www/js/.",
     "www:js:polyfill:es5-sham": "cp node_modules/es5-shim/es5-sham.min.js ./dist/www/js/.",
     "www:js:polyfill:console": "cp node_modules/console-polyfill/index.js ./dist/www/js/console-polyfill.js",
     "www:js:vendors": "browserify -r react -o ./dist/www/js/vendors.js",
     "www:js:app": "browserify -t babelify -x react -e ./app.js -o ./dist/www/js/app.js",
     "www:html:index": "babel-node ./bin/createPage.js > ./dist/www/index.html",
+    "www:css:normalize": "cp -f ./node_modules/normalize.css/normalize.css ./dist/www/css/.",
     "www:assets:img": "cp -Rf ./lib/themes/mnmo/img ./dist/www/",
     "www:serve": "babel-node server.js",
     "npm:cp": "npm run npm:cp:package.json & npm run npm:cp:img && npm run npm:cp:es6-lib",
@@ -34,9 +35,10 @@
     "www:js:polyfill": "npm run www:js:polyfill:es5-shim && npm run www:js:polyfill:es5-sham && npm run www:js:polyfill:console",
     "www:js": "npm run www:js:vendors & npm run www:js:app && npm run www:js:polyfill",
     "www:html": "npm run www:html:index",
+    "www:css": "npm run www:css:normalize",
     "www:assets": "npm run www:assets:img",
     "prewww": "npm run www:clean && npm run www:mkdir",
-    "www": "npm run www:js & npm run www:html & npm run www:assets"
+    "www": "npm run www:js & npm run www:html & npm run www:assets && npm run www:css"
   },
   "repository": {
     "type": "git",
@@ -71,6 +73,7 @@
     "js-beautify": "^1.5.5",
     "koa": "^0.18.1",
     "koa-static": "^1.4.9",
+    "normalize.css": "^3.0.2",
     "object-assign": "^2.0.0",
     "react": "^0.13.1"
   }

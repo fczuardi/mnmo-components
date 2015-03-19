@@ -12,6 +12,9 @@ import {Page} from '../lib';
 
 var options = {
     title: 'mnmo components',
+    stylesheets: [
+        './css/normalize.css'
+    ],
     scripts: [
         './js/es5-shim.min.js',
         './js/es5-sham.min.js',
