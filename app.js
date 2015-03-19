@@ -6,15 +6,20 @@ import {
 
 import {
     FieldSet,
-    TextInput,
     Checkbox
 } from './lib';
-import {Stage, CenteredBox} from './lib/themes/mnmo';
+import {
+    Stage, 
+    CenteredBox, 
+    TextInput} from './lib/themes/mnmo';
 import {
     Checkbox as MnmoCheckbox,
     FieldSet as MnmoFieldSet 
 } from './lib/themes/mnmo';
 import mnmoCheckboxStyles from './lib/themes/mnmo/styles/checkbox';
+
+console.log(TextInput);
+
 
 render(
     createElement(Stage, null,
@@ -24,6 +29,7 @@ render(
             ),
             createElement(MnmoFieldSet, { legend: 'Bem vindo' },
                 createElement(TextInput, {placeholder: 'usuário'}),
+                createElement(TextInput, {placeholder: 'senha', type: 'password'}),
                 createElement(Checkbox, {
                         id: 'mycheckbox01',
                         checked: true,
