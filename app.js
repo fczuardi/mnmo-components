@@ -18,7 +18,8 @@ import {
 import {
     Checkbox as MnmoCheckbox,
     Select as MnmoSelect,
-    FieldSet as MnmoFieldSet 
+    FieldSet as MnmoFieldSet,
+    Submit as MnmoSubmit
 } from './lib/themes/mnmo';
 import mnmoCheckboxStyles from './lib/themes/mnmo/styles/checkbox';
 
@@ -44,6 +45,13 @@ render(
                     'checked checkbox'
                 )
             ),
+            create(MnmoSubmit, {
+                value: 'Já respondeu a pergunta?',
+                disabled: true
+            }),
+            create(MnmoSubmit, {
+                value: 'Acessar'
+            }),
             create(FieldSet, {styles: {fieldset: { borderColor: '#0bb' }}},
                 create(Select, {name: 'foobarSelector'},
                     DOM.option({value: 1}, 'FOOBAR'),
