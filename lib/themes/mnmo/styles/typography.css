@@ -23,14 +23,10 @@
     font-weight: 300;
 }
 
-
-html {
-    font-size: 1em;
-    line-height: 1.4;
-}
 .mnmo-root {
     font-family: 'Roboto Light', Sans-Serif, sans-serif;
     font-weight: 300;
+    font-size: 17px;
 }
 
 .mnmo-root {
@@ -39,4 +35,12 @@ html {
 .mnmo-root input,
 .mnmo-root select{
     color: black;
+}
+
+.mnmo-root a {
+    display: inline-block;
+    height: 24px;
+    text-decoration: none;
+    color: #fff;
+    border-bottom: 1px solid white;
 }
