@@ -8,7 +8,8 @@ import {
 import {
     FieldSet,
     Checkbox,
-    Select
+    Select,
+    Submit
 } from './lib';
 import {
     Stage, 
@@ -27,14 +28,6 @@ console.log(TextInput);
 render(
     create(Stage, null,
         create(CenteredBox, null,
-            create(FieldSet, {styles: {fieldset: { borderColor: '#0bb' }}},
-                create(Select, {name: 'foobarSelector'},
-                    DOM.option({value: 1}, 'FOOBAR'),
-                    DOM.option({value: 1}, 'HELLO'),
-                    DOM.option({value: 1}, 'WORLD')
-                ),
-                create(TextInput, {placeholder: 'my placeholder'})
-            ),
             create(MnmoFieldSet, { legend: 'Bem vindo' },
                 create(TextInput, {placeholder: 'usuário'}),
                 create(TextInput, {placeholder: 'senha', type: 'password'}),
@@ -49,7 +42,15 @@ render(
                         styles: mnmoCheckboxStyles
                     },
                     'checked checkbox'
+                )
+            ),
+            create(FieldSet, {styles: {fieldset: { borderColor: '#0bb' }}},
+                create(Select, {name: 'foobarSelector'},
+                    DOM.option({value: 1}, 'FOOBAR'),
+                    DOM.option({value: 1}, 'HELLO'),
+                    DOM.option({value: 1}, 'WORLD')
                 ),
+                create(TextInput, {placeholder: 'my placeholder'}),
                 create(Checkbox, {
                         id: 'mycheckbox02',
                         checked: false
@@ -60,7 +61,8 @@ render(
                         id: 'mycheckbox03',
                     },
                     'checked property not defined'
-                )
+                ),
+                create(Submit, {value: 'OK', disabled: true})
             )
         )
     ),
