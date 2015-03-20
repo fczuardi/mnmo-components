@@ -32,3 +32,11 @@ html {
     font-family: 'Roboto Light', Sans-Serif, sans-serif;
     font-weight: 300;
 }
+
+.mnmo-root {
+    color: white;
+}
+.mnmo-root input,
+.mnmo-root select{
+    color: black;
+}
