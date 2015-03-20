@@ -5,9 +5,10 @@
  */
 import React from 'react';
 export default (p) => 
-<div>
+<div style={p.styles.div}>
     <input
         type="submit"
+        style={p.styles.input}
         {...p}
     />
 </div>;
