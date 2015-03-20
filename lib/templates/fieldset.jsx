@@ -6,7 +6,7 @@
  */
 import React from 'react';
 export default (p) => 
-<fieldset style={p.styles.fieldset}>
+<fieldset className={p.className} style={p.styles.fieldset}>
     {p.legend ? 
         <legend style={p.styles.legend}>
             {p.legend}
