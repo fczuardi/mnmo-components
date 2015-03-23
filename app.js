@@ -23,7 +23,6 @@ import {
 } from './lib/themes/mnmo';
 import mnmoCheckboxStyles from './lib/themes/mnmo/styles/checkbox';
 
-console.log(TextInput);
 
 
 render(
