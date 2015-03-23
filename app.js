@@ -37,6 +37,7 @@ render(
                     DOM.option({value: 1}, 'HELLO'),
                     DOM.option({value: 1}, 'WORLD')
                 ),
+                create(MnmoSelect, {name: 'foobarSelector'}),
                 create(Checkbox, {
                         id: 'mycheckbox01',
                         checked: true,
