@@ -9,6 +9,7 @@ import {
     FieldSet,
     Checkbox,
     Select,
+    RadioButton,
     Submit
 } from './lib';
 import {
@@ -53,6 +54,21 @@ render(
                 value: 'Acessar'
             }),
             create(FieldSet, {styles: {fieldset: { borderColor: '#0bb' }}},
+                create(RadioButton, {
+                    name: 'group-1', 
+                    id: 'radio-1',
+                    onChange: function(){console.log('foo');}
+                }, 'A'),
+                create(RadioButton, {
+                    name: 'group-1', 
+                    id: 'radio-2',
+                    onChange: function(){console.log('foo');}
+                }, 'B'),
+                create(RadioButton, {
+                    name: 'group-1', 
+                    id: 'radio-3',
+                    onChange: function(){console.log('foo');}
+                }, 'C'),
                 create(Select, {name: 'foobarSelector'},
                     DOM.option({value: 1}, 'FOOBAR'),
                     DOM.option({value: 1}, 'HELLO'),
