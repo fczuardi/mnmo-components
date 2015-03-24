@@ -7,7 +7,7 @@
  */
 import React from 'react';
 export default (p) =>
-<div style={p.styles.div}>
+<div style={p.styles.div} className={p.className}>
     <input 
         type="radio" 
         name={p.name}

@@ -24,6 +24,18 @@
 }
 
 @font-face {
+    font-family: 'Roboto Thin';
+    src: url(../fonts/Roboto.eot);
+    src: url(../fonts/Roboto.eot?#iefix) format('embedded-opentype'), 
+         local('Roboto Thin'), local('Roboto-Thin'), 
+         url(../fonts/Roboto-Thin.woff) format('woff'),
+         url(../fonts/Roboto-Thin.ttf) format('truetype'), 
+         url(../fonts/Roboto.svg#Roboto) format('svg');
+    font-style: normal;
+    font-weight: 100;
+}
+
+@font-face {
     font-family: 'Roboto Bold';
     src: url(../fonts/Roboto.eot);
     src: url(../fonts/Roboto.eot?#iefix) format('embedded-opentype'), 

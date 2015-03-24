@@ -20,6 +20,7 @@ import {
     Checkbox as MnmoCheckbox,
     Select as MnmoSelect,
     FieldSet as MnmoFieldSet,
+    RadioButton as MnmoRadioButton,
     Submit as MnmoSubmit
 } from './lib/themes/mnmo';
 import mnmoCheckboxStyles from './lib/themes/mnmo/styles/checkbox';
@@ -45,6 +46,25 @@ render(
                     },
                     'checked checkbox'
                 )
+            ),
+            create(MnmoFieldSet, {legend: 'Quanto é 3 + 5?'},
+                create(MnmoRadioButton, {
+                    name: 'group-0', 
+                    id: 'radio-mnmo-1',
+                    first: true,
+                    onChange: function(){console.log('foo');}
+                }, '8'),
+                create(MnmoRadioButton, {
+                    name: 'group-0', 
+                    id: 'radio-mnmo-2',
+                    checked: true,
+                    onChange: function(){console.log('foo');}
+                }, '4'),
+                create(MnmoRadioButton, {
+                    name: 'group-0', 
+                    id: 'radio-mnmo-3',
+                    onChange: function(){console.log('foo');}
+                }, '35')
             ),
             create(MnmoSubmit, {
                 value: 'Já respondeu a pergunta?',
