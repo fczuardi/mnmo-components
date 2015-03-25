@@ -10,7 +10,8 @@ import {
     Checkbox,
     Select,
     RadioButton,
-    Submit
+    Submit,
+    List
 } from './lib';
 import {
     Stage, 
@@ -73,7 +74,13 @@ render(
             create(MnmoSubmit, {
                 value: 'Acessar'
             }),
+            //------------------------------------------------------------------
             create(FieldSet, {styles: {fieldset: { borderColor: '#0bb' }}},
+                create(List, null,
+                    DOM.li(null, 'Item A'),
+                    DOM.li(null, 'Item B'),
+                    DOM.li(null, 'Item C')
+                ),
                 create(RadioButton, {
                     name: 'group-1', 
                     id: 'radio-1',
