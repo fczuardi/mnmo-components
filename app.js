@@ -11,7 +11,8 @@ import {
     Select,
     RadioButton,
     Submit,
-    List
+    List,
+    LI
 } from './lib';
 import {
     Stage, 
@@ -22,7 +23,8 @@ import {
     Select as MnmoSelect,
     FieldSet as MnmoFieldSet,
     RadioButton as MnmoRadioButton,
-    Submit as MnmoSubmit
+    Submit as MnmoSubmit,
+    List as MnmoList
 } from './lib/themes/mnmo';
 import mnmoCheckboxStyles from './lib/themes/mnmo/styles/checkbox';
 
@@ -31,6 +33,11 @@ import mnmoCheckboxStyles from './lib/themes/mnmo/styles/checkbox';
 render(
     create(Stage, null,
         create(CenteredBox, null,
+            create(MnmoList, null,
+                DOM.li(null, 'Item A'),
+                DOM.li(null, 'Item B'),
+                DOM.li(null, 'Item C')
+            ),
             create(MnmoFieldSet, { legend: 'Bem vindo' },
                 create(TextInput, {placeholder: 'usuário'}),
                 create(TextInput, {placeholder: 'senha', type: 'password'}),
@@ -77,9 +84,20 @@ render(
             //------------------------------------------------------------------
             create(FieldSet, {styles: {fieldset: { borderColor: '#0bb' }}},
                 create(List, null,
-                    DOM.li(null, 'Item A'),
-                    DOM.li(null, 'Item B'),
-                    DOM.li(null, 'Item C')
+                    create(LI,{type: 'link', href: '#'}, 'Item A'),
+                    create(LI,{type: 'link', href: '#'}, 'Item B'),
+                    create(LI,{type: 'link', href: '#'}, 'Item C')
+                ),
+                create(List, null,
+                    create(LI,{type: 'radio', id: 'radio-1', name: 'menu-radio-group'}, 'Item A'),
+                    create(LI,{type: 'radio', id: 'radio-2', name: 'menu-radio-group', checked: true}, 'Item B'),
+                    create(LI,{type: 'radio', id: 'radio-3', name: 'menu-radio-group'}, 'Item C')
+                ),
+                create(List, null,
+                    create(LI,{type: 'checkbox', id: 'menu-check-1'}, 'Item A'),
+                    create(LI,{type: 'checkbox', id: 'menu-check-2', checked: true}, 'Item B'),
+                    create(LI,{type: 'checkbox', id: 'menu-check-3'}, 'Item C'),
+                    create(LI,{type: 'checkbox', id: 'menu-check-4', checked: false}, 'Item D')
                 ),
                 create(RadioButton, {
                     name: 'group-1', 
