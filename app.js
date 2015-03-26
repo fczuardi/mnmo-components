@@ -16,10 +16,11 @@ import {
     LI
 } from './lib';
 import {
-    Stage, 
+    Stage,
     CenteredBox, 
     TextInput} from './lib/themes/mnmo';
 import {
+    Drawer as MnmoDrawer,
     Checkbox as MnmoCheckbox,
     Select as MnmoSelect,
     FieldSet as MnmoFieldSet,
@@ -34,7 +35,7 @@ import mnmoCheckboxStyles from './lib/themes/mnmo/styles/checkbox';
 
 render(
     create(Stage, null,
-        create(Drawer, null,
+        create(MnmoDrawer, null,
             create(MnmoList, null,
                 create(MnmoLI,{type: 'link', href: '#'}, 'Item A'),
                 create(MnmoLI,{type: 'link', href: '#'}, 'Item B'),
