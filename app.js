@@ -24,7 +24,8 @@ import {
     FieldSet as MnmoFieldSet,
     RadioButton as MnmoRadioButton,
     Submit as MnmoSubmit,
-    List as MnmoList
+    List as MnmoList,
+    LI as MnmoLI,
 } from './lib/themes/mnmo';
 import mnmoCheckboxStyles from './lib/themes/mnmo/styles/checkbox';
 
@@ -34,9 +35,20 @@ render(
     create(Stage, null,
         create(CenteredBox, null,
             create(MnmoList, null,
-                DOM.li(null, 'Item A'),
-                DOM.li(null, 'Item B'),
-                DOM.li(null, 'Item C')
+                create(MnmoLI,{type: 'link', href: '#'}, 'Item A'),
+                create(MnmoLI,{type: 'link', href: '#'}, 'Item B'),
+                create(MnmoLI,{type: 'link', href: '#'}, 'Item C')
+            ),
+            create(MnmoList, null,
+                create(MnmoLI,{type: 'radio', id: 'mnmo-radio-1', name: 'menu-radio-group'}, 'Item A'),
+                create(MnmoLI,{type: 'radio', id: 'mnmo-radio-2', name: 'menu-radio-group', checked: true}, 'Item B'),
+                create(MnmoLI,{type: 'radio', id: 'mnmo-radio-3', name: 'menu-radio-group'}, 'Item C')
+            ),
+            create(MnmoList, null,
+                create(MnmoLI,{type: 'checkbox', id: 'mnmo-menu-check-1'}, 'Item A'),
+                create(MnmoLI,{type: 'checkbox', id: 'mnmo-menu-check-2', checked: true}, 'Item B'),
+                create(MnmoLI,{type: 'checkbox', id: 'mnmo-menu-check-3'}, 'Item C'),
+                create(MnmoLI,{type: 'checkbox', id: 'mnmo-menu-check-4', checked: false}, 'Item D')
             ),
             create(MnmoFieldSet, { legend: 'Bem vindo' },
                 create(TextInput, {placeholder: 'usuário'}),
