@@ -47,7 +47,8 @@
     "www:css": "npm run www:css:normalize && npm run www:css:mnmo:typography",
     "www:assets": "npm run www:assets:img && npm run www:img:custom && npm run www:assets:fonts",
     "prewww": "npm run www:clean && npm run www:mkdir",
-    "www": "npm run www:js & npm run www:html & npm run www:assets && npm run www:css"
+    "www": "npm run www:js & npm run www:html & npm run www:assets && npm run www:css",
+    "dev": "watchify -t babelify -x react -e ./app.js -o ./dist/www/js/app.js"
   },
   "repository": {
     "type": "git",
@@ -85,6 +86,7 @@
     "koa-static": "^1.4.9",
     "normalize.css": "^3.0.2",
     "object-assign": "^2.0.0",
-    "react": "^0.13.1"
+    "react": "^0.13.1",
+    "watchify": "^2.6.2"
   }
 }
