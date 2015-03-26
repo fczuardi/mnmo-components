@@ -3,7 +3,7 @@
  */
 import React from 'react';
 export default (p, input, label) => {
-    const type = p.type.toLowerCase();
+    const type = p.type ? p.type.toLowerCase() : null;
     const input = (( type === 'checkbox') || (type === 'radio')) ? (
 <input style={p.styles.input} type={p.type} id={p.id} name={p.name} />
     ) : null;
