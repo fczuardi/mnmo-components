@@ -6,6 +6,7 @@ import {
 } from 'react';
 
 import {
+    Drawer,
     FieldSet,
     Checkbox,
     Select,
@@ -33,7 +34,7 @@ import mnmoCheckboxStyles from './lib/themes/mnmo/styles/checkbox';
 
 render(
     create(Stage, null,
-        create(CenteredBox, null,
+        create(Drawer, null,
             create(MnmoList, null,
                 create(MnmoLI,{type: 'link', href: '#'}, 'Item A'),
                 create(MnmoLI,{type: 'link', href: '#'}, 'Item B'),
@@ -49,7 +50,9 @@ render(
                 create(MnmoLI,{type: 'checkbox', id: 'mnmo-menu-check-2', checked: true}, 'Item B'),
                 create(MnmoLI,{type: 'checkbox', id: 'mnmo-menu-check-3'}, 'Item C'),
                 create(MnmoLI,{type: 'checkbox', id: 'mnmo-menu-check-4', checked: false}, 'Item D')
-            ),
+            )
+        ),
+        create(CenteredBox, null,
             create(MnmoFieldSet, { legend: 'Bem vindo' },
                 create(TextInput, {placeholder: 'usuário'}),
                 create(TextInput, {placeholder: 'senha', type: 'password'}),
@@ -94,7 +97,7 @@ render(
                 value: 'Acessar'
             }),
             //------------------------------------------------------------------
-            create(FieldSet, {styles: {fieldset: { borderColor: '#0bb' }}},
+            create(Drawer, null,
                 create(List, null,
                     create(LI,{type: 'link', href: '#'}, 'Item A'),
                     create(LI,{type: 'link', href: '#'}, 'Item B'),
@@ -110,7 +113,9 @@ render(
                     create(LI,{type: 'checkbox', id: 'menu-check-2', checked: true}, 'Item B'),
                     create(LI,{type: 'checkbox', id: 'menu-check-3'}, 'Item C'),
                     create(LI,{type: 'checkbox', id: 'menu-check-4', checked: false}, 'Item D')
-                ),
+                )
+            ),
+            create(FieldSet, {styles: {fieldset: { borderColor: '#0bb' }}},
                 create(RadioButton, {
                     name: 'group-1', 
                     id: 'radio-1',
