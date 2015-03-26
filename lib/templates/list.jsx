@@ -3,6 +3,6 @@
  */
 import React from 'react';
 export default (p) =>
-<ol {...p}>
+<ol style={p.styles.ol} {...p}>
     {p.children}
 </ol>;
