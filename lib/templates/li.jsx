@@ -8,7 +8,7 @@ export default (p, input, label) => {
 <input style={p.styles.input} type={p.type} id={p.id} name={p.name} />
     ) : null;
     const label = (type === 'link') ? (
-<a style={p.styles.label} {...p}>
+<a style={p.styles.label} onClick={p.onClick} {...p}>
     {p.children}
 </a>
     ) : ((type === 'checkbox') || (type === 'radio')) ? (
