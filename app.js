@@ -28,6 +28,7 @@ import {
     Submit as MnmoSubmit,
     List as MnmoList,
     LI as MnmoLI,
+    Switch
 } from './lib/themes/mnmo';
 import mnmoCheckboxStyles from './lib/themes/mnmo/styles/checkbox';
 
@@ -37,7 +38,24 @@ render(
     create(Stage, null,
         create(MnmoDrawer, null,
             create(MnmoList, null,
-                create(MnmoLI,{type: 'link', href: '#'}, 'Item A'),
+                create(MnmoLI,null, 
+                    'Foobar',
+                    create(Switch, {
+                        id: 'switch-1',
+                        onChange: function(event){
+                            console.log(event.target.checked);
+                        }
+                    }),
+                    create(Switch, {
+                        id: 'switch-2',
+                        checked: true,
+                        onChange: function(event){
+                            console.log(event.target.checked);
+                        }
+                    },
+                    'With label'
+                    )
+                ),
                 create(MnmoLI,{type: 'link', href: '#'}, 'Item B'),
                 create(MnmoLI,{type: 'link', href: '#'}, 'Item C')
             ),

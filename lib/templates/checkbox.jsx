@@ -13,7 +13,7 @@
 import React from 'react';
 export default (p) => {
     return (
-<div>
+<div style={p.styles.div}>
     <input type="checkbox"
         name={p.name}
         checked={p.checked}
