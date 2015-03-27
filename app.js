@@ -39,13 +39,24 @@ render(
         create(MnmoDrawer, null,
             create(MnmoList, null,
                 create(MnmoLI,null, 
+                    create(Switch, {
+                        id: 'switch-0',
+                        onChange: function(event){
+                            console.log(event.target.checked);
+                        }
+                    })
+                ),
+                create(MnmoLI,{type: 'link', href: '#'}, 'Item B'),
+                create(MnmoLI,null, 
                     'Foobar',
                     create(Switch, {
                         id: 'switch-1',
                         onChange: function(event){
                             console.log(event.target.checked);
                         }
-                    }),
+                    })
+                ),
+                create(MnmoLI,null, 
                     create(Switch, {
                         id: 'switch-2',
                         checked: true,
@@ -56,7 +67,6 @@ render(
                     'With label'
                     )
                 ),
-                create(MnmoLI,{type: 'link', href: '#'}, 'Item B'),
                 create(MnmoLI,{type: 'link', href: '#'}, 'Item C')
             ),
             create(MnmoList, null,
