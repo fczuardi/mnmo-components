@@ -40,6 +40,18 @@ render(
             create(MnmoList, null,
                 create(MnmoLI,null, 
                     create(Switch, {
+                        id: 'switch-2',
+                        checked: true,
+                        isItem: true,
+                        onChange: function(event){
+                            console.log(event.target.checked);
+                        }
+                    },
+                    'With label'
+                    )
+                ),
+                create(MnmoLI,null, 
+                    create(Switch, {
                         id: 'switch-0',
                         onChange: function(event){
                             console.log(event.target.checked);
@@ -51,21 +63,11 @@ render(
                     'Foobar',
                     create(Switch, {
                         id: 'switch-1',
+                        styles: {div: {float: 'left'}},
                         onChange: function(event){
                             console.log(event.target.checked);
                         }
                     })
-                ),
-                create(MnmoLI,null, 
-                    create(Switch, {
-                        id: 'switch-2',
-                        checked: true,
-                        onChange: function(event){
-                            console.log(event.target.checked);
-                        }
-                    },
-                    'With label'
-                    )
                 ),
                 create(MnmoLI,{type: 'link', href: '#'}, 'Item C')
             ),
@@ -172,7 +174,13 @@ render(
                     },
                     'unchecked checkbox'
                 ),
-                create(MnmoCheckbox, {
+                create(Checkbox, {
+                        id: 'mycheckbox02b',
+                        checked: true
+                    },
+                    'checked checkbox'
+                ),
+                create(Checkbox, {
                         id: 'mycheckbox03',
                     },
                     'checked property not defined'
