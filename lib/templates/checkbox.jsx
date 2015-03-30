@@ -14,12 +14,14 @@ import React from 'react';
 export default (p) => {
     return (
 <div className={p.className} style={p.styles.div}>
-    <input type="checkbox"
+    <input 
+        type="checkbox"
         name={p.name}
+        id={p.id}
         checked={p.checked}
+        value={p.value}
         disabled={p.disabled}
         onChange={p.onChange}
-        id={p.id}
         style={p.styles.input}
     />
     <label 

@@ -45,8 +45,8 @@ render(
                         checked: true,
                         isItem: true,
                         onChange: function(event){
-                            console.log(event.target.checked);
-                        }
+                            console.log(event.target.value, event.target.checked);
+                                }
                     },
                     'With label'
                     )
@@ -55,7 +55,7 @@ render(
                     create(Switch, {
                         id: 'switch-0',
                         onChange: function(event){
-                            console.log(event.target.checked);
+                            console.log(event.target.value, event.target.checked);
                         }
                     })
                 ),
@@ -65,7 +65,7 @@ render(
                         id: 'switch-1',
                         styles: {div: {float: 'left'}},
                         onChange: function(event){
-                            console.log(event.target.checked);
+                            console.log(event.target.value, event.target.checked);
                         }
                     })
                 )
@@ -73,17 +73,34 @@ render(
             create(MnmoList, null,
                 create(MnmoLI, null,
                     create(MnmoRadioButton, {
-                        isItem: true, id: 'mnmo-radio-1', name: 'menu-radio-group'
+                        isItem: true, 
+                        id: 'mnmo-radio-1', 
+                        onChange: function(event){
+                            console.log(event.target.value);
+                        },
+                        value: 'itema',
+                        name: 'menu-radio-groupt'
                     }, 'Item A')
                 ),
                 create(MnmoLI, null,
                     create(MnmoRadioButton, {
-                        isItem: true, id: 'mnmo-radio-2', checked: true, name: 'menu-radio-group'
+                        isItem: true, id: 'mnmo-radio-2', checked: true, 
+                        name: 'menu-radio-group',
+                        value: 'itemb',
+                        onChange: function(event){
+                            console.log(event.target.value);
+                        },
                     }, 'Item B')
                 ),
                 create(MnmoLI, null,
                     create(MnmoRadioButton, {
-                        isItem: true, id: 'mnmo-radio-3', name: 'menu-radio-group'
+                        isItem: true, 
+                        id: 'mnmo-radio-3', 
+                        value: 'itemc',
+                        name: 'menu-radio-group',
+                        onChange: function(event){
+                            console.log(event.target.value);
+                        },
                     }, 'Item C')
                 )
             ),
@@ -129,20 +146,23 @@ render(
                         name: 'group-0', 
                         id: 'radio-mnmo-1',
                         isBox: true,
-                        onChange: function(){console.log('foo');}
+                        value: 8,
+                        onChange: function(event){console.log('foo', event.target.value);}
                     }, '8'),
                     create(MnmoRadioButton, {
                         name: 'group-0', 
                         id: 'radio-mnmo-2',
                         checked: true,
                         isBox: true,
-                        onChange: function(){console.log('foo');}
+                        value: 4,
+                        onChange: function(event){console.log('foo', event.target.value);}
                     }, '4'),
                     create(MnmoRadioButton, {
                         name: 'group-0', 
                         id: 'radio-mnmo-3',
                         isBox: true,
-                        onChange: function(){console.log('foo');}
+                        value: 35,
+                        onChange: function(event){console.log('foo', event.target.value);}
                     }, '35')
                 )
             ),
@@ -156,36 +176,40 @@ render(
             //------------------------------------------------------------------
             create(Drawer, null,
                 create(List, null,
-                    create(LI,{type: 'link', href: '#'}, 'Item A'),
-                    create(LI,{type: 'link', href: '#'}, 'Item B'),
-                    create(LI,{type: 'link', href: '#'}, 'Item C')
-                ),
-                create(List, null,
-                    create(LI,{type: 'radio', id: 'radio-1', name: 'menu-radio-group'}, 'Item A'),
-                    create(LI,{type: 'radio', id: 'radio-2', name: 'menu-radio-group', checked: true}, 'Item B'),
-                    create(LI,{type: 'radio', id: 'radio-3', name: 'menu-radio-group'}, 'Item C')
-                ),
-                create(List, null,
-                    create(LI,{type: 'checkbox', id: 'menu-check-1'}, 'Item A'),
-                    create(LI,{type: 'checkbox', id: 'menu-check-2', checked: true}, 'Item B'),
-                    create(LI,{type: 'checkbox', id: 'menu-check-3'}, 'Item C'),
-                    create(LI,{type: 'checkbox', id: 'menu-check-4', checked: false}, 'Item D')
+                    create(LI, null,
+                        create(Checkbox, {
+                            id: 'menu-check-1'
+                        }, 'Item A')
+                    ),
+                    create(MnmoLI, null,
+                        create(Checkbox, {
+                            id: 'menu-check-2', checked: true
+                        }, 'Item B')
+                    ),
+                    create(MnmoLI, null,
+                        create(Checkbox, {
+                            id: 'menu-check-3'
+                        }, 'Item C')
+                    )
                 )
             ),
             create(FieldSet, {styles: {fieldset: { borderColor: '#0bb' }}},
                 create(RadioButton, {
                     name: 'group-1', 
                     id: 'radio-1',
+                    value: 'A',
                     onChange: function(){console.log('foo');}
                 }, 'A'),
                 create(RadioButton, {
                     name: 'group-1', 
                     id: 'radio-2',
+                    value: 'B',
                     onChange: function(){console.log('foo');}
                 }, 'B'),
                 create(RadioButton, {
                     name: 'group-1', 
                     id: 'radio-3',
+                    value: 'C',
                     onChange: function(){console.log('foo');}
                 }, 'C'),
                 create(Select, {name: 'foobarSelector'},

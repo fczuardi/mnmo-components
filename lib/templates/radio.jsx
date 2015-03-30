@@ -12,12 +12,12 @@ export default (p) =>
         type="radio" 
         name={p.name}
         id={p.id}
-        key={p.key}
-        value={p.value}
         checked={p.checked}
         disabled={p.disabled}
-        style={p.styles.input}
+        value={p.value}
         onChange={p.onChange}
+        style={p.styles.input}
+        data-checked={p.checked}
     />
     <label 
         htmlFor={p.id}
