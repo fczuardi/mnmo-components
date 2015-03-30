@@ -28,7 +28,8 @@ import {
     Submit as MnmoSubmit,
     List as MnmoList,
     LI as MnmoLI,
-    Switch
+    Switch,
+    RadioGroup,
 } from './lib/themes/mnmo';
 import mnmoCheckboxStyles from './lib/themes/mnmo/styles/checkbox';
 
@@ -102,23 +103,27 @@ render(
                 )
             ),
             create(MnmoFieldSet, {legend: 'Quanto é 3 + 5?'},
-                create(MnmoRadioButton, {
-                    name: 'group-0', 
-                    id: 'radio-mnmo-1',
-                    first: true,
-                    onChange: function(){console.log('foo');}
-                }, '8'),
-                create(MnmoRadioButton, {
-                    name: 'group-0', 
-                    id: 'radio-mnmo-2',
-                    checked: true,
-                    onChange: function(){console.log('foo');}
-                }, '4'),
-                create(MnmoRadioButton, {
-                    name: 'group-0', 
-                    id: 'radio-mnmo-3',
-                    onChange: function(){console.log('foo');}
-                }, '35')
+                create(RadioGroup, null, 
+                    create(MnmoRadioButton, {
+                        name: 'group-0', 
+                        id: 'radio-mnmo-1',
+                        isBox: true,
+                        onChange: function(){console.log('foo');}
+                    }, '8'),
+                    create(MnmoRadioButton, {
+                        name: 'group-0', 
+                        id: 'radio-mnmo-2',
+                        checked: true,
+                        isBox: true,
+                        onChange: function(){console.log('foo');}
+                    }, '4'),
+                    create(MnmoRadioButton, {
+                        name: 'group-0', 
+                        id: 'radio-mnmo-3',
+                        isBox: true,
+                        onChange: function(){console.log('foo');}
+                    }, '35')
+                )
             ),
             create(MnmoSubmit, {
                 value: 'Já respondeu a pergunta?',
