@@ -88,6 +88,6 @@
     "normalize.css": "^3.0.2",
     "object-assign": "^2.0.0",
     "react": "^0.13.1",
-    "watchify": "^2.6.2"
+    "watchify": "^3.0.0"
   }
 }
