@@ -59,7 +59,6 @@ render(
                         }
                     })
                 ),
-                create(MnmoLI,{type: 'link', href: '#'}, 'Item B'),
                 create(MnmoLI,null, 
                     'Foobar',
                     create(Switch, {
@@ -69,19 +68,41 @@ render(
                             console.log(event.target.checked);
                         }
                     })
+                )
+            ),
+            create(MnmoList, null,
+                create(MnmoLI, null,
+                    create(MnmoRadioButton, {
+                        isItem: true, id: 'mnmo-radio-1', name: 'menu-radio-group'
+                    }, 'Item A')
                 ),
-                create(MnmoLI,{type: 'link', href: '#'}, 'Item C')
+                create(MnmoLI, null,
+                    create(MnmoRadioButton, {
+                        isItem: true, id: 'mnmo-radio-2', checked: true, name: 'menu-radio-group'
+                    }, 'Item B')
+                ),
+                create(MnmoLI, null,
+                    create(MnmoRadioButton, {
+                        isItem: true, id: 'mnmo-radio-3', name: 'menu-radio-group'
+                    }, 'Item C')
+                )
             ),
             create(MnmoList, null,
-                create(MnmoLI,{type: 'radio', id: 'mnmo-radio-1', name: 'menu-radio-group'}, 'Item A'),
-                create(MnmoLI,{type: 'radio', id: 'mnmo-radio-2', name: 'menu-radio-group', checked: true}, 'Item B'),
-                create(MnmoLI,{type: 'radio', id: 'mnmo-radio-3', name: 'menu-radio-group'}, 'Item C')
-            ),
-            create(MnmoList, null,
-                create(MnmoLI,{type: 'checkbox', id: 'mnmo-menu-check-1'}, 'Item A'),
-                create(MnmoLI,{type: 'checkbox', id: 'mnmo-menu-check-2', checked: true}, 'Item B'),
-                create(MnmoLI,{type: 'checkbox', id: 'mnmo-menu-check-3'}, 'Item C'),
-                create(MnmoLI,{type: 'checkbox', id: 'mnmo-menu-check-4', checked: false}, 'Item D')
+                create(MnmoLI, null,
+                    create(MnmoCheckbox, {
+                        isItem: true, id: 'mnmo-menu-check-1'
+                    }, 'Item A')
+                ),
+                create(MnmoLI, null,
+                    create(MnmoCheckbox, {
+                        isItem: true, id: 'mnmo-menu-check-2', checked: true
+                    }, 'Item B')
+                ),
+                create(MnmoLI, null,
+                    create(MnmoCheckbox, {
+                        isItem: true, id: 'mnmo-menu-check-3'
+                    }, 'Item C')
+                )
             )
         ),
         create(CenteredBox, null,
