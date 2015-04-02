@@ -30,6 +30,7 @@ import {
     LI as MnmoLI,
     Switch,
     RadioGroup,
+    A
 } from './lib/themes/mnmo';
 import mnmoCheckboxStyles from './lib/themes/mnmo/styles/checkbox';
 
@@ -39,6 +40,11 @@ render(
     create(Stage, null,
         create(MnmoDrawer, null,
             create(MnmoList, null,
+                create(MnmoLI,null, 
+                    create(A, {href: 'http://example.com'},
+                    'A link'
+                    )
+                ),
                 create(MnmoLI,null, 
                     create(Switch, {
                         id: 'switch-2',
