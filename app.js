@@ -32,9 +32,6 @@ import {
     RadioGroup,
     A
 } from './lib/themes/mnmo';
-import mnmoCheckboxStyles from './lib/themes/mnmo/styles/checkbox';
-
-
 
 render(
     create(Stage, null,
@@ -138,12 +135,17 @@ render(
                     DOM.option({value: 1}, 'WORLD')
                 ),
                 create(MnmoSelect, {name: 'foobarSelector'}),
-                create(Checkbox, {
+                create(MnmoCheckbox, {
                         id: 'mycheckbox01',
-                        checked: true,
-                        styles: mnmoCheckboxStyles
+                        checked: true
                     },
                     'checked checkbox'
+                ),
+                create(MnmoCheckbox, {
+                        id: 'mycheckbox02',
+                        checked: false
+                    },
+                    'unchecked checkbox'
                 )
             ),
             create(MnmoFieldSet, {legend: 'Quanto é 3 + 5?'},

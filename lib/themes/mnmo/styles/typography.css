@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* fonts */
 @font-face {
     font-family: 'Roboto';
@@ -45,6 +47,31 @@
          url(../fonts/Roboto.svg#Roboto) format('svg');
     font-style: normal;
     font-weight: 700;
+}
+
+/* Entypo pictograms by Daniel Bruce — www.entypo.com */
+@font-face {
+    font-family: 'Custom-Entypo-mnmo';
+    src: url(../fonts/Custom-Entypo-mnmo.eot);
+    src: url(../fonts/Custom-Entypo-mnmo.eot?#iefix) format('embedded-opentype'), 
+         url(../fonts/Custom-Entypo-mnmo.woff) format('woff'),
+         url(../fonts/Custom-Entypo-mnmo.ttf) format('truetype'),
+         url(../fonts/Custom-Entypo-mnmo.svg#Custom-Entypo-mnmo) format('svg');
+    font-style: normal;
+    font-weight: normal;
+}
+
+[data-icon]:before {
+    font-family: "Custom-Entypo-mnmo" !important;
+    content: attr(data-icon);
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    text-align: center;
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .mnmo-root {
