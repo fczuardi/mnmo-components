@@ -24,7 +24,7 @@
     "npm:cp:es6-lib": "cp -R ./lib ./dist/npm/es6/.",
     "npm:cp:css": "cp -f ./lib/themes/mnmo/styles/*.css ./dist/npm/lib/themes/mnmo/styles/.",
     "www:clean": "rm -rf ./dist/www",
-    "www:mkdir": "mkdir -p ./dist/www/js && mkdir -p ./dist/www/css && mkdir -p ./dist/www/fonts",
+    "www:mkdir": "mkdir -p ./dist/www/js && mkdir -p ./dist/www/css && mkdir -p ./dist/www/fonts && mkdir -p ./dist/www/img",
     "www:js:polyfill:es5-shim": "cp node_modules/es5-shim/es5-shim.min.js ./dist/www/js/.",
     "www:js:polyfill:es5-sham": "cp node_modules/es5-shim/es5-sham.min.js ./dist/www/js/.",
     "www:js:polyfill:console": "cp node_modules/console-polyfill/index.js ./dist/www/js/console-polyfill.js",
@@ -74,7 +74,7 @@
   },
   "devDependencies": {
     "babel": "^5.0.9",
-    "babelify": "^6.0.1",
+    "babelify": "^6.0.2",
     "browserify": "^9.0.7",
     "console-polyfill": "^0.2.1",
     "es5-shim": "^4.1.0",
