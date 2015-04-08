@@ -31,104 +31,111 @@ import {
     Switch,
     RadioGroup,
     A,
-    Toolbar
+    Toolbar,
+    ToolbarButton
 } from './lib/themes/mnmo';
+
+let drawerMenu = create(MnmoDrawer, {closed: false},
+    create(MnmoList, null,
+        create(MnmoLI,null, 
+            create(A, {href: 'http://example.com'},
+            'A link'
+            )
+        ),
+        create(MnmoLI,null, 
+            create(Switch, {
+                id: 'switch-2',
+                checked: true,
+                isItem: true,
+                onChange: function(event){
+                    console.log(event.target.value, event.target.checked);
+                        }
+            },
+            'With label'
+            )
+        ),
+        create(MnmoLI,null, 
+            create(Switch, {
+                id: 'switch-0',
+                onChange: function(event){
+                    console.log(event.target.value, event.target.checked);
+                }
+            })
+        ),
+        create(MnmoLI,null, 
+            'Foobar',
+            create(Switch, {
+                id: 'switch-1',
+                styles: {div: {float: 'left'}},
+                onChange: function(event){
+                    console.log(event.target.value, event.target.checked);
+                }
+            })
+        )
+    ),
+    create(MnmoList, null,
+        create(MnmoLI, null,
+            create(MnmoRadioButton, {
+                isItem: true, 
+                id: 'mnmo-radio-1', 
+                onChange: function(event){
+                    console.log(event.target.value);
+                },
+                value: 'itema',
+                name: 'menu-radio-groupt'
+            }, 'Item A')
+        ),
+        create(MnmoLI, null,
+            create(MnmoRadioButton, {
+                isItem: true, id: 'mnmo-radio-2', checked: true, 
+                name: 'menu-radio-group',
+                value: 'itemb',
+                onChange: function(event){
+                    console.log(event.target.value);
+                },
+            }, 'Item B')
+        ),
+        create(MnmoLI, null,
+            create(MnmoRadioButton, {
+                isItem: true, 
+                id: 'mnmo-radio-3', 
+                value: 'itemc',
+                name: 'menu-radio-group',
+                onChange: function(event){
+                    console.log(event.target.value);
+                },
+            }, 'Item C')
+        )
+    ),
+    create(MnmoList, null,
+        create(MnmoLI, null,
+            create(MnmoCheckbox, {
+                isItem: true, id: 'mnmo-menu-check-1'
+            }, 'Item A')
+        ),
+        create(MnmoLI, null,
+            create(MnmoCheckbox, {
+                isItem: true, id: 'mnmo-menu-check-2', checked: true
+            }, 'Item B')
+        ),
+        create(MnmoLI, null,
+            create(MnmoCheckbox, {
+                isItem: true, id: 'mnmo-menu-check-3'
+            }, 'Item C')
+        )
+    )
+);
 
 render(
     create(Stage, null,
-        create(MnmoDrawer, null,
-            create(MnmoList, null,
-                create(MnmoLI,null, 
-                    create(A, {href: 'http://example.com'},
-                    'A link'
-                    )
-                ),
-                create(MnmoLI,null, 
-                    create(Switch, {
-                        id: 'switch-2',
-                        checked: true,
-                        isItem: true,
-                        onChange: function(event){
-                            console.log(event.target.value, event.target.checked);
-                                }
-                    },
-                    'With label'
-                    )
-                ),
-                create(MnmoLI,null, 
-                    create(Switch, {
-                        id: 'switch-0',
-                        onChange: function(event){
-                            console.log(event.target.value, event.target.checked);
-                        }
-                    })
-                ),
-                create(MnmoLI,null, 
-                    'Foobar',
-                    create(Switch, {
-                        id: 'switch-1',
-                        styles: {div: {float: 'left'}},
-                        onChange: function(event){
-                            console.log(event.target.value, event.target.checked);
-                        }
-                    })
-                )
-            ),
-            create(MnmoList, null,
-                create(MnmoLI, null,
-                    create(MnmoRadioButton, {
-                        isItem: true, 
-                        id: 'mnmo-radio-1', 
-                        onChange: function(event){
-                            console.log(event.target.value);
-                        },
-                        value: 'itema',
-                        name: 'menu-radio-groupt'
-                    }, 'Item A')
-                ),
-                create(MnmoLI, null,
-                    create(MnmoRadioButton, {
-                        isItem: true, id: 'mnmo-radio-2', checked: true, 
-                        name: 'menu-radio-group',
-                        value: 'itemb',
-                        onChange: function(event){
-                            console.log(event.target.value);
-                        },
-                    }, 'Item B')
-                ),
-                create(MnmoLI, null,
-                    create(MnmoRadioButton, {
-                        isItem: true, 
-                        id: 'mnmo-radio-3', 
-                        value: 'itemc',
-                        name: 'menu-radio-group',
-                        onChange: function(event){
-                            console.log(event.target.value);
-                        },
-                    }, 'Item C')
-                )
-            ),
-            create(MnmoList, null,
-                create(MnmoLI, null,
-                    create(MnmoCheckbox, {
-                        isItem: true, id: 'mnmo-menu-check-1'
-                    }, 'Item A')
-                ),
-                create(MnmoLI, null,
-                    create(MnmoCheckbox, {
-                        isItem: true, id: 'mnmo-menu-check-2', checked: true
-                    }, 'Item B')
-                ),
-                create(MnmoLI, null,
-                    create(MnmoCheckbox, {
-                        isItem: true, id: 'mnmo-menu-check-3'
-                    }, 'Item C')
-                )
-            )
-        ),
+        drawerMenu,
         DOM.div({style: {float: 'left'}},
             create(Toolbar, null,
-                DOM.button({style: {height: '100%', border: 0}}, 'Menu')
+                create(ToolbarButton, {
+                    type: 'menuToggle',
+                }, 'Menu'),
+                create(ToolbarButton, {
+                }, 'A Button')
             ),
             DOM.div(null,
                 DOM.p(null, 'Foobar')
