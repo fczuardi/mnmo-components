@@ -35,7 +35,7 @@ import {
     ToolbarButton
 } from './lib/themes/mnmo';
 
-let drawerMenu = create(MnmoDrawer, {closed: false},
+let drawerMenu = create(MnmoDrawer, {title: 'Drawer Title', closed: false},
     create(MnmoList, null,
         create(MnmoLI,null, 
             create(A, {href: 'http://example.com'},
