@@ -43,7 +43,7 @@ let drawerMenu = create(MnmoDrawer, {container: true, panelsOpened: 2},
         },
         create(MnmoList, null,
             create(MnmoLI,null, 
-                create(A, {href: 'http://example.com'},
+                create(A, {type: 'panel', href: 'http://example.com'},
                 'A link'
                 )
             ),
