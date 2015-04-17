@@ -9,7 +9,7 @@ export default (p) => {
 </h2>
                             ) : null;
     return (
-<div>
+<div style={p.styles.div}>
     {title}
     <ol style={p.styles.ol} {...p}>
         {p.children}

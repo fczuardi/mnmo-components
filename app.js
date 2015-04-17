@@ -153,6 +153,12 @@ let floatingPanel = create(MnmoDrawer, {
             title: 'First list'
         },
         create(MnmoLI, null, 'Item A')
+    ),
+    create(MnmoList, {
+            title: 'Second list',
+            overlap: true
+        },
+        create(MnmoLI, null, 'Item A')
     )
 );
 render(
