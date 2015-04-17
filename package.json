@@ -73,7 +73,7 @@
     "react": "^0.13.0"
   },
   "devDependencies": {
-    "babel": "^5.1.9",
+    "babel": "^5.1.10",
     "babelify": "^6.0.2",
     "browserify": "^9.0.8",
     "console-polyfill": "^0.2.1",
@@ -83,7 +83,7 @@
     "js-beautify": "^1.5.5",
     "koa": "^0.19.1",
     "koa-static": "^1.4.9",
-    "lodash": "^3.6.0",
+    "lodash": "^3.7.0",
     "normalize.css": "^3.0.3",
     "object-assign": "^2.0.0",
     "react": "^0.13.1",

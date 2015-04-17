@@ -145,6 +145,16 @@ let drawerMenu = create(MnmoDrawer, {container: true, panelsOpened: 2},
     )
 );
 
+let floatingPanel = create(MnmoDrawer, {
+        title: 'Floating Panel',
+        closeLabel: 'Close'
+    },
+    create(MnmoList, {
+            title: 'First list'
+        },
+        create(MnmoLI, null, 'Item A')
+    )
+);
 render(
     create(Stage, null,
         drawerMenu,
@@ -156,7 +166,13 @@ render(
                 create(ToolbarButton, {
                 }, 'A Button')
             ),
-            DOM.div(null,
+            DOM.div({
+                style: {
+                    position: 'absolute',
+                    marginTop: 53
+                }
+            },
+                floatingPanel,
                 DOM.p(null, 'Foobar')
             )
         )
