@@ -41,7 +41,7 @@ let drawerMenu = create(MnmoDrawer, {container: true, panelsOpened: 2},
             closeLabel: 'Voltar',
             closed: false
         },
-        create(MnmoList, null,
+        create(MnmoList, {bottomSpace: true},
             create(MnmoLI,null, 
                 create(A, {type: 'panel', href: 'http://example.com'},
                 'A link'
@@ -78,7 +78,7 @@ let drawerMenu = create(MnmoDrawer, {container: true, panelsOpened: 2},
                 })
             )
         ),
-        create(MnmoList, null,
+        create(MnmoList,  {bottomSpace: true},
             create(MnmoLI, null,
                 create(MnmoRadioButton, {
                     isItem: true, 
@@ -112,7 +112,7 @@ let drawerMenu = create(MnmoDrawer, {container: true, panelsOpened: 2},
                 }, 'Item C')
             )
         ),
-        create(MnmoList, null,
+        create(MnmoList,  null,
             create(MnmoLI, null,
                 create(MnmoCheckbox, {
                     isItem: true, id: 'mnmo-menu-check-1'
@@ -155,8 +155,7 @@ let floatingPanel = create(MnmoDrawer, {
         create(MnmoLI, null, 'Item A')
     ),
     create(MnmoList, {
-            title: 'Second list',
-            overlap: true
+            title: 'Second list'
         },
         create(MnmoLI, null, 'Item A')
     )
