@@ -32,7 +32,8 @@ import {
     RadioGroup,
     A,
     Toolbar,
-    ToolbarButton
+    ToolbarButton,
+    MultiPicker
 } from './lib/themes/mnmo';
 
 let drawerMenu = create(MnmoDrawer, {container: true, panelsOpened: 2},
@@ -41,6 +42,46 @@ let drawerMenu = create(MnmoDrawer, {container: true, panelsOpened: 2},
             closeLabel: 'Voltar',
             closed: false
         },
+        create(MultiPicker, {
+            cells: [
+                {
+                    label: 'foo',
+                    value: 'b',
+                    options: [
+                        {
+                            label: 'option A',
+                            value: 'a'
+                        },
+                        {
+                            label: 'option B',
+                            value: 'b'
+                        },
+                        {
+                            label: 'option C',
+                            value: 'c'
+                        },
+                    ]
+                },
+                {
+                    label: 'bar',
+                    value: 'c',
+                    options: [
+                        {
+                            label: 'boption A',
+                            value: 'a'
+                        },
+                        {
+                            label: 'boption B',
+                            value: 'b'
+                        },
+                        {
+                            label: 'boption C',
+                            value: 'c'
+                        },
+                    ]
+                },
+            ]
+        }),
         create(MnmoList, {bottomSpace: true},
             create(MnmoLI,null, 
                 create(A, {type: 'panel', href: 'http://example.com'},
