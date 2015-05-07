@@ -210,6 +210,9 @@ render(
                     type: 'menuToggle',
                 }, 'Menu'),
                 create(ToolbarButton, {
+                    type: 'dialogToggle',
+                    disabled: false,
+                    closed: false
                 }, 'A Button')
             ),
             DOM.div({
