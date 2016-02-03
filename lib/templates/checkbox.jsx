@@ -7,25 +7,26 @@
  * attributes are set, clicking on the label background image sets the html
  * checkbox input checked state even if it is visually hidden.
  *
- * @param {Object} p - the properties of the checkbox and it's label 
+ * @param {Object} p - the properties of the checkbox and it's label
  * @see mnmo-components/checkbox
  */
 import React from 'react';
 export default (p) => {
     return (
 <div className={p.className} style={p.styles.div}>
-    <input 
+    <input
         type="checkbox"
         name={p.name}
         id={p.id}
         checked={p.checked}
         value={p.value}
         disabled={p.disabled}
+        data-index={p['data-index']}
         onChange={p.onChange}
         style={p.styles.input}
     />
-    <label 
-        htmlFor={p.id} 
+    <label
+        htmlFor={p.id}
         style={p.styles.label}
     >
         {p.children}
