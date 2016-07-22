@@ -18,8 +18,8 @@
     "npm:mkdir": "mkdir -p ./dist/npm/es6 && mkdir -p ./dist/npm/lib/themes/mnmo/styles",
     "npm:transpile": "babel -d ./dist/npm/lib -m common --optional spec.protoToAssign ./lib",
     "postnpm:transpile": "npm run npm:edit:jsx-references",
-    "npm:edit:jsx-references": "find ./dist/npm/lib -type f -name '*.js' -print0 | xargs -0 sed -i.bak 's@\\.jsx@@g'",
-    "postnpm:edit:jsx-references": "find ./dist/npm/lib -type f -name '*.bak' -print0 | xargs -0 rm -fv",
+    "npm:edit:jsx-references": "find ./dist/npm/lib -type f -name \"*.js\" -print0 | xargs -0 sed -i.bak \"s@\\.jsx@@g\"",
+    "postnpm:edit:jsx-references": "find ./dist/npm/lib -type f -name \"*.bak\" -print0 | xargs -0 rm -fv",
     "npm:cp:package.json": "cp -f ./package.json ./dist/npm/.",
     "npm:cp:es6-lib": "cp -R ./lib ./dist/npm/es6/.",
     "npm:cp:css": "cp -f ./lib/themes/mnmo/styles/*.css ./dist/npm/lib/themes/mnmo/styles/.",
@@ -67,7 +67,7 @@
     "url": "https://github.com/fczuardi/mnmo-components/issues"
   },
   "homepage": "https://github.com/fczuardi/mnmo-components",
-  "private": true,
+  "private": false,
   "peerDependencies": {
     "react": "^0.13.0"
   },
