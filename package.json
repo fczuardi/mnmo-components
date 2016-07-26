@@ -13,7 +13,7 @@
     "font:mkdir": "mkdir -p ./assets/fonts",
     "font:mkdirwin": "mkdirp ./assets/fonts",
     "font:download:roboto": "goog-webfont-dl --all -f Roboto",
-    "font:download:custom-icons": "./bin/downloadCustomEntypo.sh",
+    "font:download:custom-icons": "node ./bin/downloadCustomEntypo.sh",
     "font:mv:roboto": "mv Roboto* ./assets/fonts",
     "npm:clean": "rm -rf ./dist/npm",
     "npm:mkdir": "mkdir -p ./dist/npm/es6 && mkdir -p ./dist/npm/lib/themes/mnmo/styles",
